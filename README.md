@@ -1,1 +1,1 @@
-# springboot-produtos-rest
+# Projeto Spring SPOT Educação - Cadastro de Produtos
