@@ -29,6 +29,7 @@ public class Compra {
     )
     private List<Produto> produtos;
     /*
+
     @ManyToOne
     @MapsId("id")
     @JoinColumn(name = "cliente_id")
@@ -57,6 +58,5 @@ public class Compra {
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
-
 
 }

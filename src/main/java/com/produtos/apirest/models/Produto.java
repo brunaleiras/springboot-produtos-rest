@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="TB_PRODUTO")
 public class Produto implements Serializable{
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -27,7 +26,6 @@ public class Produto implements Serializable{
 
     @ManyToMany(mappedBy = "produtos")
     private List<Compra> compras;
-
 
     public List<Compra> getCompras() {
         return compras;

@@ -38,14 +38,14 @@ public class ClienteController {
         Produto p02 = new Produto();
         p02.setId(2L);
         p02.setNome("mascara de oxigenio");
-        p02.setQuantidade(new BigDecimal(123));
-        p02.setValor(new BigDecimal((66)));
+        p02.setQuantidade(new BigDecimal(998));
+        p02.setValor(new BigDecimal((86)));
 
         Produto p03 = new Produto();
         p03.setId(3L);
         p03.setNome("luvas de protecao");
-        p03.setQuantidade(new BigDecimal(123));
-        p03.setValor(new BigDecimal((66)));
+        p03.setQuantidade(new BigDecimal(3444));
+        p03.setValor(new BigDecimal((12)));
 
 
         produtoRepository.save(p01);
@@ -76,7 +76,6 @@ public class ClienteController {
         cliente.setCompras(compras);
 
         return this.clienteRepository.save(cliente);
-
 
     }
 
