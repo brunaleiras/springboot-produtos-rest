@@ -3,9 +3,11 @@ package com.produtos.apirest.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -19,6 +21,9 @@ public class Cliente implements Serializable {
     )
     @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Compra> compras;
 
     private String nome;
 
@@ -58,4 +63,11 @@ public class Cliente implements Serializable {
         this.email = email;
     }
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
 }

@@ -2,6 +2,7 @@ package com.produtos.apirest.models;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 import lombok.*;
 
@@ -23,6 +24,18 @@ public class Produto implements Serializable{
     private BigDecimal quantidade;
 
     private BigDecimal valor;
+
+    @ManyToMany(mappedBy = "produtos")
+    private List<Compra> compras;
+
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
 
     public long getId() {
         return id;
