@@ -1,24 +1,22 @@
 package com.produtos.apirest.controllers;
 
+import com.produtos.apirest.models.Cliente;
 import com.produtos.apirest.models.Produto;
 import com.produtos.apirest.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apirest")
+@RequestMapping("produto")
 public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @GetMapping(value = "/produtos", produces = "application/json")
+    @GetMapping(value = "/todos", produces = "application/json")
     public List<Produto> getProdutos(){
         List<Produto> listaProduto = new ArrayList();
         Iterable<Produto> it = produtoRepository.findAll();
@@ -28,8 +26,53 @@ public class ProdutoController {
 
     @GetMapping(value = "/produto/{id}", produces = "application/json")
     public Optional<Produto> getProdutoById(@PathVariable("id") Long id){
+
         return produtoRepository.findById(id);
+
+    }
+
+    @PostMapping(value = "/gravar", produces = "application/json")
+    public Produto gravarProduto(Produto produto){
+
+        return produtoRepository.save(produto);
+
+    }
+
+    @PutMapping(value = "/atualizar", produces = "application/json")
+    public Produto alterarProduto(Produto produto){
+
+        Produto produtoPersistencia = produtoRepository.findById(produto.getId())
+        produtoPersistencia.setValor(produto.getValor());
+        produtoPersistencia.setQuantidade(produto.getQuantidade());
+        produtoPersistencia.setNome(produto.getNome());
+
+        return produtoRepository.save(produtoPersistencia);
+
+    }
+
+    @DeleteMapping
+    public Long removerProduto(Produto produto){
+
+        produtoRepository.deleteById(produto.getId());
+
+        return produto.getId();
     }
 
 
+    public void teste(){
+
+        List<Produto> listProduto = new ArrayList<Produto>();
+        List<Cliente> listCliente = new ArrayList<Cliente>();
+
+        this.recebeLista(listProduto);
+    }
+
+    private void recebeLista(List<?> listaQualquer){
+
+
+
+    }
+
+
+    //@DeleteMapping(value = "/remover")
 }

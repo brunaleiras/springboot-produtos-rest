@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("clienterest")
+@RequestMapping("cliente")
 public class ClienteController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class ClienteController {
     private ProdutoRepository produtoRepository;
 
     //@PostMapping
-    @GetMapping(value = "/cliente", produces = "application/json")
+    @GetMapping(value = "/popula", produces = "application/json")
     public Cliente populaCliente(){
 
         Produto p01 = new Produto();
@@ -54,8 +54,6 @@ public class ClienteController {
 
         Cliente cliente = new Cliente();
         cliente.setNome("jose");
-        cliente.setTelefone("999-999");
-        cliente.setEmail("email@email.com");
 
         List<Compra> compras = new ArrayList<Compra>();
 

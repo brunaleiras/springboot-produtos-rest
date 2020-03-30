@@ -25,12 +25,6 @@ public class Cliente implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Compra> compras;
 
-    private String nome;
-
-    private String telefone;
-
-    private String email;
-
     public UUID getId() {
         return id;
     }
@@ -39,28 +33,14 @@ public class Cliente implements Serializable {
         this.id = id;
     }
 
+    private String nome;
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public List<Compra> getCompras() {
