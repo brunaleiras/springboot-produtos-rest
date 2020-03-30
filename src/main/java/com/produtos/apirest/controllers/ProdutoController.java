@@ -18,26 +18,11 @@ public class ProdutoController {
 
     @GetMapping(value = "/todos", produces = "application/json")
     public List<Produto> getProdutos(){
-
-
-        Produto p1 = new Produto();
-        p1.setId(1L);
-
-
-        p1.getId();
-
-
-        p1 = null;
-
-        p1.getId();
-
-
-        System.out.println("TESTE");
-
-
         List<Produto> listaProduto = new ArrayList();
+
         Iterable<Produto> it = produtoRepository.findAll();
         it.forEach(listaProduto::add);
+
         return listaProduto;
     }
 
@@ -59,7 +44,6 @@ public class ProdutoController {
             return produto;
 
         }
-
 
     }
 
@@ -90,20 +74,4 @@ public class ProdutoController {
     }
 
 
-    public void teste(){
-
-        List<Produto> listProduto = new ArrayList<Produto>();
-        List<Cliente> listCliente = new ArrayList<Cliente>();
-
-        this.recebeLista(listProduto);
-    }
-
-    private void recebeLista(List<?> listaQualquer){
-
-
-
-    }
-
-
-    //@DeleteMapping(value = "/remover")
 }
