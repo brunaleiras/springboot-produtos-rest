@@ -18,6 +18,23 @@ public class ProdutoController {
 
     @GetMapping(value = "/todos", produces = "application/json")
     public List<Produto> getProdutos(){
+
+
+        Produto p1 = new Produto();
+        p1.setId(1L);
+
+
+        p1.getId();
+
+
+        p1 = null;
+
+        p1.getId();
+
+
+        System.out.println("TESTE");
+
+
         List<Produto> listaProduto = new ArrayList();
         Iterable<Produto> it = produtoRepository.findAll();
         it.forEach(listaProduto::add);
@@ -34,19 +51,33 @@ public class ProdutoController {
     @PostMapping(value = "/gravar", produces = "application/json")
     public Produto gravarProduto(Produto produto){
 
-        return produtoRepository.save(produto);
+        if(produto != null ){
+
+            return produtoRepository.save(produto);
+        }else{
+
+            return produto;
+
+        }
+
 
     }
 
     @PutMapping(value = "/atualizar", produces = "application/json")
     public Produto alterarProduto(Produto produto){
 
-        Produto produtoPersistencia = produtoRepository.findById(produto.getId())
-        produtoPersistencia.setValor(produto.getValor());
-        produtoPersistencia.setQuantidade(produto.getQuantidade());
-        produtoPersistencia.setNome(produto.getNome());
+        Produto produtoPersistencia = produtoRepository.findById(produto.getId()).get();
 
-        return produtoRepository.save(produtoPersistencia);
+        if(produtoPersistencia != null){
+
+            produtoPersistencia.setValor(produto.getValor());
+            produtoPersistencia.setQuantidade(produto.getQuantidade());
+            produtoPersistencia.setNome(produto.getNome());
+
+            produtoRepository.save(produtoPersistencia);
+        }
+
+        return produtoPersistencia;
 
     }
 

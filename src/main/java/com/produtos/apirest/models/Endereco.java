@@ -15,11 +15,9 @@ public class Endereco {
 
     private UUID id;
 
-    private String endereco_principal;
+    private String endereco;
 
-    private String endereco_de_entrega;
-
-    private String endereço_opcional;
+    private String tipo_endereco;
 
     public UUID getId() {
         return id;
@@ -29,29 +27,22 @@ public class Endereco {
         this.id = id;
     }
 
-    public String getEndereco_principal() {
-        return endereco_principal;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereco_principal(String endereco_principal) {
-        this.endereco_principal = endereco_principal;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public String getEndereco_de_entrega() {
-        return endereco_de_entrega;
+    public String getTipo_endereco() {
+        return tipo_endereco;
     }
 
-    public void setEndereco_de_entrega(String endereco_de_entrega) {
-        this.endereco_de_entrega = endereco_de_entrega;
+    public void setTipo_endereco(String tipo_endereco) {
+        this.tipo_endereco = tipo_endereco;
     }
 
-    public String getEndereço_opcional() {
-        return endereço_opcional;
-    }
-
-    public void setEndereço_opcional(String endereço_opcional) {
-        this.endereço_opcional = endereço_opcional;
-    }
 
 
 }
