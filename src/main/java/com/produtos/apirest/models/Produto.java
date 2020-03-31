@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Table(name="TB_PRODUTO")
 public class Produto implements Serializable{
     private static final long serialVersionUID = 1L;
+    //{id:1, nome: 'Teste', quantidade: 1, valor: 9 }
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -18,7 +19,7 @@ public class Produto implements Serializable{
     private BigDecimal quantidade;
 
     private BigDecimal valor;
-
+    /*
     @ManyToMany(mappedBy = "produtos")
     private List<Compra> compras;
 
@@ -30,7 +31,7 @@ public class Produto implements Serializable{
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
     }
-
+    */
     public long getId() {
         return id;
     }
