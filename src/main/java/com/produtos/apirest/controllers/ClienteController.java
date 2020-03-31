@@ -24,7 +24,7 @@ public class ClienteController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @PutMapping(value = "/", produces = "application/json", consumes = "application/json")
+    @PutMapping(value = "/alterar", produces = "application/json", consumes = "application/json")
     public Cliente alterarCliente(@RequestBody Cliente cliente){
 
         Cliente clientePersistencia = clienteRepository.findById(cliente.getId()).get();
@@ -41,7 +41,7 @@ public class ClienteController {
     }
 
 
-    @GetMapping(value = "/", produces = "application/json")
+    @GetMapping(value = "/todos", produces = "application/json")
     public List<Cliente> getTodosOsClientes(){
 
         List<Cliente> todosClientes = clienteRepository.findAll();
