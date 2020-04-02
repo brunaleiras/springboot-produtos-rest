@@ -47,7 +47,7 @@ public class ProdutoController {
 
     }
 
-    @PutMapping(value = "/atualizar", produces = "application/json", consumes = "application/json")
+    @PutMapping(value = "/atualizar", produces = "application/json")
     public Produto alterarProduto(Produto produto){
 
         Produto produtoPersistencia = produtoRepository.findById(produto.getId()).get();

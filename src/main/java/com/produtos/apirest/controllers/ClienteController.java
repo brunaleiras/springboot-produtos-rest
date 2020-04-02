@@ -60,7 +60,6 @@ public class ClienteController {
         p01.setQuantidade(new BigDecimal(123));
         p01.setValor(new BigDecimal((66)));
 
-
         Produto p02 = new Produto();
         p02.setId(2L);
         p02.setNome("mascara de oxigenio");
@@ -72,7 +71,6 @@ public class ClienteController {
         p03.setNome("luvas de protecao");
         p03.setQuantidade(new BigDecimal(3444));
         p03.setValor(new BigDecimal((12)));
-
 
         produtoRepository.save(p01);
         produtoRepository.save(p02);
