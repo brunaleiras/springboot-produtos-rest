@@ -6,6 +6,7 @@ import com.produtos.apirest.repository.ProdutoRepository;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +37,12 @@ public class ProdutoController {
     }
 
     @GetMapping(value = "/produto/{id}", produces = "application/json")
-    public Optional<Produto> getProdutoById(@PathVariable("id") Long id){
+    public Optional<Produto> getProdutoById(@ApiParam(
+            name =  "id",
+            type = "Long",
+            value = "Digite um id de produto",
+            example = "1",
+            required = true) @PathVariable("id") Long id){
 
         return produtoRepository.findById(id);
 
@@ -88,13 +94,12 @@ public class ProdutoController {
 
     }
 
-//    @DeleteMapping
-//    public Long removerProduto(Produto produto){
-//
-//        produtoRepository.deleteById(produto.getId());
-//
-//        return produto.getId();
-//    }
+    @DeleteMapping
+    public Long removerProduto(Produto produto){
+
+       produtoRepository.deleteById(produto.getId());
+        return produto.getId();
+    }
 
 
 }
