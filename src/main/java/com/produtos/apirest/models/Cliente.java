@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-import lombok.Data;
+//import lombok.Data;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 

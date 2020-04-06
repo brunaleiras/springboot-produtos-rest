@@ -3,6 +3,9 @@ package com.produtos.apirest.controllers;
 import com.produtos.apirest.models.Cliente;
 import com.produtos.apirest.models.Produto;
 import com.produtos.apirest.repository.ProdutoRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@ApiOperation(value = "Webservice de produtos")
+@ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Resposta OK"),
+        @ApiResponse(code = 500, message = "Ocorreu um erro na API"),
+        @ApiResponse(code = 403, message = "Sem premissão"),
+})
 @RestController
 @RequestMapping("produto")
 public class ProdutoController {
@@ -30,6 +39,20 @@ public class ProdutoController {
     public Optional<Produto> getProdutoById(@PathVariable("id") Long id){
 
         return produtoRepository.findById(id);
+
+    }
+
+    @GetMapping(value = "/", produces = "application/json")
+    public List<Produto> getListaProdutos(){
+
+        return produtoRepository.findAll();
+
+    }
+
+    @GetMapping
+    public List<Produto> getListaProdutosCentral(){
+
+        return produtoRepository.findAll();
 
     }
 
@@ -65,13 +88,13 @@ public class ProdutoController {
 
     }
 
-    @DeleteMapping
-    public Long removerProduto(Produto produto){
-
-        produtoRepository.deleteById(produto.getId());
-
-        return produto.getId();
-    }
+//    @DeleteMapping
+//    public Long removerProduto(Produto produto){
+//
+//        produtoRepository.deleteById(produto.getId());
+//
+//        return produto.getId();
+//    }
 
 
 }
