@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 class ListaProdutosComponent extends Component {
 
     render() {
@@ -15,7 +18,7 @@ class ListaProdutosComponent extends Component {
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Learn Full stack with Spring Boot and Angular</td>
+                                <td>Alcool em Gel</td>
                             </tr>
                         </tbody>
                     </table>

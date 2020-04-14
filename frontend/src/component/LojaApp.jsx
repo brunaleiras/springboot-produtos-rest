@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListaProdutosComponent from './ListaProdutosComponent'
+
 class LojaApp extends Component {
     render() {
         return (<>
