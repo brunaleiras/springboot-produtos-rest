@@ -19,7 +19,7 @@
 		<spring.profiles.active>local,no-liquibase</spring.profiles.active>
 		<maven.test.skip>true</maven.test.skip>
 
-		<frontend-src-dir>../frontend</frontend-src-dir>
+		<frontend-src-dir>./frontend</frontend-src-dir>
 		<node.version>v12.3.1</node.version>
 		<yarn.version>v1.16.0</yarn.version>
 		<frontend-maven-plugin.version>1.7.5</frontend-maven-plugin.version>
