@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import LojaApp from './component/LojaApp';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="container">
-        <LojaApp />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="Ecommerce">
+        Iniciando projeto ReactJS + SpringBoot
+    </div>
+  );
 }
 
 export default App;

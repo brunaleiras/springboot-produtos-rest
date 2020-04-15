@@ -20,11 +20,11 @@ public class ApirestApplication implements WebMvcConfigurer {
 
 
 
-	@Override
-	public void addViewControllers (ViewControllerRegistry registry) {
-		RedirectViewControllerRegistration r =
-				registry.addRedirectViewController("/", "/swagger-ui.html");
-	}
+//	@Override
+//	public void addViewControllers (ViewControllerRegistry registry) {
+//		RedirectViewControllerRegistration r =
+//				registry.addRedirectViewController("/", "/swagger-ui.html");
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApirestApplication.class, args);
