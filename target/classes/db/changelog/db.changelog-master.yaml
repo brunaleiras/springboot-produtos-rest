@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: brunaleiras
+      changes:
+        - createTable:
+            tableName: produto
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nome
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: brunaleiras
+      changes:
+        - insert:
+            tableName: produto
+            columns:
+              - column:
+                  name: nome
+                  value: Alcool Em Gel
