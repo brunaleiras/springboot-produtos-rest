@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, NavLink } from 'reactstrap'
 import ModalForm from './Components/Modals/Modal'
 import DataTable from './Components/Tables/DataTable'
 import { CSVLink } from "react-csv"
@@ -68,6 +68,7 @@ class App extends Component {
         Gerar CSV
     </CSVLink>
     <ModalForm buttonLabel="Adicionar Item" addItemToState={this.addItemToState}/>
+    <NavLink href="/swagger-ui.html">Catálogo de Serviços no SWAGGER-UI</NavLink>
     </Col>
     </Row>
     </Container>
